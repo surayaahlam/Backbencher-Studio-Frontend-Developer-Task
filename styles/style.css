@@ -667,3 +667,48 @@ body {
         gap: 50px;
     }
 }
+
+/* Video Section styles */
+.video-container {
+    padding: 80px 112px;
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    gap: 19px;
+
+    >div {
+        position: relative;
+
+        .play {
+            position: absolute;
+        }
+    }
+}
+
+.video1,
+.video3 {
+    width: 287.56px;
+    height: 630.58px;
+    border-radius: 31.69px;
+    background: url("/images/image-4.png") no-repeat center center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.63);
+    background-blend-mode: overlay;
+}
+
+.video2 {
+    width: 602px;
+    height: 630px;
+    object-fit: cover;
+    border-radius: 31.69px;
+}
+
+#play1, #play3 {
+    bottom: 42%;
+    right: 36%;
+}
+
+#play2 {
+    bottom: 42%;
+    left: 44%;
+}
