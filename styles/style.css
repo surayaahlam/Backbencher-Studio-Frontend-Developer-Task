@@ -703,7 +703,8 @@ body {
     border-radius: 31.69px;
 }
 
-#play1, #play3 {
+#play1,
+#play3 {
     bottom: 42%;
     right: 36%;
 }
@@ -711,4 +712,15 @@ body {
 #play2 {
     bottom: 42%;
     left: 44%;
+}
+
+/* Customer Feedback Section styles */
+.feedback-container {
+    padding: 80px 112px;
+
+    h3 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-bottom: 56px;
+    }
 }

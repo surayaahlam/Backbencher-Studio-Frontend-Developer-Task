@@ -48,12 +48,31 @@ const negatives = [
   }
 ];
 
+const feedbacks = [
+  {
+    name: "Arlene McCoy",
+    avatar: "/images/Avatar3.png",
+    text: "This nasal clip has helped me reduce snoring and breathe easier at night. Comfortable and <br />barely noticeable!"
+  },
+  {
+    name: "Ralph Edwards",
+    avatar: "/images/Avatar4.png",
+    text: "I use this nasal clip during my runs, and it really improves airflow. I can breathe more freely <br />and last longer during intense sessions."
+  },
+  {
+    name: "Cameron Williamson",
+    avatar: "/images/Avatar5.png",
+    text: ""
+  }
+];
+
 const performanceContainer = document.getElementById("noseclip-performance");
 const informationContainer = document.getElementById("noseclip-information");
 const painContainer = document.getElementById("pain-points");
 const solutionContainer = document.getElementById("solution-points");
 const positiveDiv = document.getElementById("positive");
-const negativeDiv = document.getElementById("negative")
+const negativeDiv = document.getElementById("negative");
+const feedbackContainer = document.getElementById("feedbacks");
 
 performance.forEach(item => {
   const div = document.createElement("div");
@@ -170,4 +189,44 @@ negatives.forEach(feature => {
   `;
 
   negativeDiv.appendChild(item);
+});
+
+
+feedbacks.forEach(review => {
+  const reviewCard = document.createElement("div");
+  reviewCard.style.borderTop = "1px solid rgba(119, 198, 123, 0.37)";
+  reviewCard.style.paddingTop = "40px";
+  reviewCard.style.marginBottom = "24px";
+
+  reviewCard.innerHTML = `
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <img src="${review.avatar}" />
+        <h5 style="font-size: 2.5rem; font-weight: 800;">${review.name}</h5>
+        <img src="images/shield.png"  />
+      </div>
+      <div style="background-color: rgba(159, 203, 204, 0.23); color: #014955; font-size: 1.125rem; font-weight: 500; padding: 12px 24px; border-radius: 10px; border: 1px solid rgb(195, 218, 214)">
+        1 Week Ago
+      </div>
+    </div>
+    
+    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+      <div style="display: flex; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-right: 25px;">
+          <img src="images/star1.png"  />
+          <img src="images/star1.png"  />
+          <img src="images/star1.png"  />
+          <img src="images/star1.png"  />
+          <img src="images/star1.png"  />
+        </div>
+        <div style="border: 1px solid rgb(165, 165, 171); width: 0; height: 23px; margin-right: 25px;"></div>
+        <img style="margin-right: 12px;" src="images/heart.png"  />
+        <p style="font-size: 0.875rem; font-weight: 600;">(1.5K)</p>
+      </div>
+      <p style="color: rgb(74, 76, 86); font-size: 1.25rem; font-weight: 500; line-height: 140%;">${review.text}</p>
+    </div>
+    <img src="images/image-4.png" style="border-radius: 14px; width: 233px; height: 188px; object-fit: cover;" />
+  `;
+
+  feedbackContainer.appendChild(reviewCard);
 });
