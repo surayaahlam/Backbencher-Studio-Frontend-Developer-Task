@@ -775,7 +775,6 @@ body {
     div {
         display: flex;
         gap: 24px;
-        /* flex-wrap: wrap; */
     }
 
     h2 {
@@ -785,4 +784,62 @@ body {
         text-align: center;
         margin-bottom: 48px;
     }
+}
+
+/* FAQ Section styles */
+.faq-container {
+    padding: 40px 112px;
+
+    h2 {
+        font-size: 3rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    >div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        column-gap: 16px;
+        row-gap: 12px;
+
+        >div {
+            padding: 16px 24px;
+            border: 1px solid rgb(218, 221, 227);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.faq-container .faq1 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    grid-row: 1 / span 4;
+}
+
+.faq-container .faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-container .faq-answer {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 160%;
+    color: rgb(64, 76, 92);
+}
+
+.faq-container .faq-divider {
+    border-top: 1px dashed rgb(218, 221, 227);
 }
