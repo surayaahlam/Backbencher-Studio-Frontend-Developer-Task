@@ -13,6 +13,9 @@
 }
 
 body {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     background: white;
     font-family: "Montserrat", sans-serif;
     color: rgb(7, 7, 7);
@@ -29,12 +32,6 @@ body {
     display: flex;
     gap: 8px;
     align-items: center;
-}
-
-.header-container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
 }
 
 /* Navbar styles */
@@ -151,9 +148,6 @@ body {
 
 /* Noseclip styles */
 .noseclip-container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
     padding: 80px 112px;
 }
 
@@ -272,9 +266,6 @@ body {
 
 /* Why Choose Our Nasal Clip styles */
 .choose-container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
     padding-top: 80px;
     padding-bottom: 63px;
 }
@@ -373,5 +364,82 @@ body {
 
     .orange {
         background-color: var(--primary-color);
+    }
+}
+
+/* Loved by Thousands styles */
+.loved-container {
+    padding: 0 122px 80px;
+}
+
+.loved-content {
+    h2 {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 130%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.loved {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+
+    button {
+        border-radius: 108px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px;
+        border: 1px solid rgb(255, 102, 0);
+        background-color: var(--primary-color);
+        margin-top: 80px;
+    }
+
+    .choose-left {
+        background-color: white;
+        border-color: rgb(137, 154, 178);
+    }
+
+    .review {
+        border: 1px solid rgb(233, 239, 247);
+        border-radius: 30px;
+        box-shadow: 0px 25px 52px -12px rgba(17, 17, 17, 0.1);
+        padding: 24px;
+
+        p {
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 160%;
+            margin-bottom: 18px;
+        }
+
+        >div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .profile { 
+                display: flex;
+                align-items: center;
+                h5 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-left: 10px;
+                }
+            }
+    
+            .rating {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                h6 {
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                }
+            }
+        }
     }
 }
