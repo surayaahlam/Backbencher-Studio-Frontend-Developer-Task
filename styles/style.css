@@ -843,3 +843,17 @@ body {
 .faq-container .faq-divider {
     border-top: 1px dashed rgb(218, 221, 227);
 }
+
+/* Footer Section styles */
+.footer-container {
+    background-color: var(--secondary-color);
+    padding: 60px 112px 20px;
+    color: white;
+
+}
+
+.footer-divider {
+    border: 1px solid rgb(255, 255, 255);
+    width: 100%;
+    margin-bottom: 24px;
+}
