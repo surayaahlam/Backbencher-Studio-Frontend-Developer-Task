@@ -2,11 +2,58 @@ const performance = ["Boost performance", "Stop snoring", "Optimized Airflow", "
 const information = ["Sizing information", "Free resizing", "Money back guarantee & free returns"];
 const pain = ["Persistent snoring", "Nasal congestion", "Allergies affecting breathing", "Struggling to breathe during workouts"];
 const solution = ["Enhance airflow", "Reduce snoring", "Clear nasal passages", "Made from soft", "Comfortable Materials"];
+const positives = [
+  {
+    title: "Actually opens your nose",
+    description: ""
+  },
+  {
+    title: "Durable",
+    description: "Intake is built strong and durable so your nose Stays open right where <br />you want it, as long as you want it."
+  },
+  {
+    title: "Stays on all day/night",
+    description: "Intake will be precisely where you left it when you awaken, keeping your <br />nasal passages open for uninterrupted breathing."
+  },
+  {
+    title: "Skin safe",
+    description: "Intake uses a strong magnetic Band to hold your nose open, not the <br />bridge of your nose. We use less adhesive and we care that your skin <br />stays where it belongs—on your nose."
+  },
+  {
+    title: "Pulls outward",
+    description: "Intake pulls out on your nose. Using the suction cup like Tabs, the Band."
+  }
+];
+
+const negatives = [
+  {
+    title: "Flimsy",
+    description: "Nasal strips have very little structure. When you inhale, they can still <br />collapse."
+  },
+  {
+    title: "Unsupportive",
+    description: "Nasal strips don't hold your nose open as wide as Intake."
+  },
+  {
+    title: "Falls off",
+    description: "Don't wake up with your nasal strip stuck to your pillow again."
+  },
+  {
+    title: "Hurts your skin",
+    description: "Nasal strips stick to the bridge of your nose using an aggressive <br />adhesive. When you pull it off, your skin goes with it."
+  },
+  {
+    title: "Pulls forward",
+    description: "Nasal strips rely on the leverage of your nose bridge to widen the passage."
+  }
+];
 
 const performanceContainer = document.getElementById("noseclip-performance");
 const informationContainer = document.getElementById("noseclip-information");
 const painContainer = document.getElementById("pain-points");
 const solutionContainer = document.getElementById("solution-points");
+const positiveDiv = document.getElementById("positive");
+const negativeDiv = document.getElementById("negative")
 
 performance.forEach(item => {
   const div = document.createElement("div");
@@ -89,4 +136,38 @@ solution.forEach(item => {
   points.appendChild(icon1);
   points.appendChild(text);
   solutionContainer.appendChild(points);
+});
+
+positives.forEach(feature => {
+  const item = document.createElement("div");
+  item.style.marginBottom = "24px";
+
+  item.innerHTML = `
+    <div>
+      <div style="margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+        <img src="images/Right.png" alt="">
+        <h4 style="font-size: 1.5rem; font-weight: 600;">${feature.title}</h4>
+      </div>
+      <p style="font-size: 1rem; font-weight: 400; line-height: 160%; text-align: left;">${feature.description}</p>
+    </div>
+  `;
+
+  positiveDiv.appendChild(item);
+});
+
+negatives.forEach(feature => {
+  const item = document.createElement("div");
+  item.style.marginBottom = "24px";
+
+  item.innerHTML = `
+    <div style="color: rgb(74, 76, 86);">
+      <div style="margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+        <img src="images/Wrong.png" alt="">
+        <h4 style="font-size: 1.5rem; font-weight: 600;">${feature.title}</h4>
+      </div>
+      <p style="font-size: 1rem; font-weight: 400; line-height: 160%; text-align: left;">${feature.description}</p>
+    </div>
+  `;
+
+  negativeDiv.appendChild(item);
 });
