@@ -34,6 +34,10 @@ body {
     align-items: center;
 }
 
+.btn:hover {
+    background-color: rgb(170, 169, 157);
+}
+
 /* Navbar styles */
 .navbar-container {
     padding: 16px 0;
@@ -71,6 +75,15 @@ body {
         text-decoration: none;
         font-size: 1rem;
         font-weight: 400;
+    }
+
+    a:hover {
+        font-weight: 600;
+    }
+
+    .home {
+        color: var(--primary-color);
+        font-weight: 600;
     }
 }
 
@@ -313,6 +326,11 @@ body {
     .choose-left {
         background-color: white;
     }
+
+    button:hover {
+        background-color: rgb(170, 169, 157);
+        border-color: rgb(170, 169, 157);
+    }
 }
 
 .choose-images {
@@ -403,6 +421,11 @@ body {
         border-color: rgb(137, 154, 178);
     }
 
+    button:hover {
+        background-color: rgb(170, 169, 157);
+        border-color: rgb(170, 169, 157);
+    }
+
     .review {
         border: 1px solid rgb(233, 239, 247);
         border-radius: 30px;
@@ -421,25 +444,65 @@ body {
             align-items: center;
             justify-content: space-between;
 
-            .profile { 
+            .profile {
                 display: flex;
                 align-items: center;
+
                 h5 {
                     font-size: 1.5rem;
                     font-weight: 600;
                     margin-left: 10px;
                 }
             }
-    
+
             .rating {
                 display: flex;
                 align-items: center;
                 gap: 4px;
+
                 h6 {
                     font-size: 1.125rem;
                     font-weight: 600;
                 }
             }
+        }
+    }
+}
+
+/* Pain Points & Solution styles */
+.pain-container {
+    padding: 80px 112px;
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    >div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 130%;
+            margin-bottom: 14px;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 130%;
+            margin-bottom: 14px;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 160%;
+            margin-bottom: 24px;
         }
     }
 }
