@@ -66,6 +66,61 @@ const feedbacks = [
   }
 ];
 
+const pricingOptions = [
+  {
+    label: "1-month supply",
+    tabs: "30 Tabs",
+    price: "$29.99",
+    discount: "5% discount",
+    features: [
+      "60 days Money back <br />guarantee",
+      "Whole Starter kit",
+      "Free Returns",
+      "Free shipping with every <br />bundle after 3 month <br />supply"
+    ],
+    highlighted: false
+  },
+  {
+    label: "3-month supply",
+    tabs: "90 Sticky Tabs",
+    price: "$79.99",
+    discount: "10% discount",
+    features: [
+      "60 days Money back <br />guarantee",
+      "Whole Starter kit",
+      "Free Returns",
+      "Free shipping with every <br />bundle after 3 month <br />supply"
+    ],
+    highlighted: true
+  },
+  {
+    label: "6-month supply",
+    tabs: "180 Sticky Tabs",
+    price: "$149.99",
+    discount: "20% discount",
+    features: [
+      "60 days Money back <br />guarantee",
+      "Whole Starter kit",
+      "Free Returns",
+      "Free shipping with every <br />bundle after 3 month <br />supply"
+    ],
+    highlighted: false
+  },
+  {
+    label: "1-Year supply",
+    tabs: "365 Sticky Tabs",
+    price: "$240.99",
+    discount: "30% discount",
+    features: [
+      "60 days Money back <br />guarantee",
+      "Whole Starter kit",
+      "Free Returns",
+      "Free shipping with every <br />bundle after 3 month <br />supply"
+    ],
+    highlighted: false
+  }
+];
+
 const performanceContainer = document.getElementById("noseclip-performance");
 const informationContainer = document.getElementById("noseclip-information");
 const painContainer = document.getElementById("pain-points");
@@ -73,6 +128,7 @@ const solutionContainer = document.getElementById("solution-points");
 const positiveDiv = document.getElementById("positive");
 const negativeDiv = document.getElementById("negative");
 const feedbackContainer = document.getElementById("feedbacks");
+const pricingContainer = document.getElementById("pricing");
 
 performance.forEach(item => {
   const div = document.createElement("div");
@@ -229,4 +285,68 @@ feedbacks.forEach(review => {
   `;
 
   feedbackContainer.appendChild(reviewCard);
+});
+
+pricingOptions.forEach(plan => {
+  const card = document.createElement("div");
+  card.style.border = "1px solid";
+  card.style.borderColor = `${plan.highlighted ? '#FF6600' : '#D2D2D5'}`;
+  card.style.borderRadius = "16px";
+  card.style.paddingBottom = "32px";
+  if (plan.highlighted) {
+    card.style.transform = "scale(1.05)";
+    card.style.zIndex = "1";
+  }
+
+  card.innerHTML = `
+    <div style="display: flex; flex-direction: column;">
+      <div style="padding: 20px 0; display: flex; flex-direction: column; background-color: ${plan.highlighted ? '#FF6600' : '#FFF0E6'};  border-radius: 16px 16px 0 0;">
+        <h3
+          style="font-size: 1.5rem; font-weight: 600; text-align: center; color: ${plan.highlighted ? '#FFFFFF' : '#1D1F2C'};">
+          ${plan.label}</h3>
+        <h4
+          style="font-size: 1rem; font-weight: 500; text-align: center; color: ${plan.highlighted ? '#FFFFFF' : '#1D1F2C'};">
+          ${plan.tabs}</h4>
+      </div>
+
+<div style="margin-top: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 16px;">${plan.price}</h2>
+    <div style="border: 2px solid; border-color: ${plan.highlighted ? '#FF6600' : '#D2D2D5'}; width: 179px; height: 0;"></div>
+    <h3 style="font-size: 1.25rem; font-weight: 600; color: rgb(255, 102, 0); margin-top: 17px;">(${plan.discount})</h3>
+    <div style="margin-top: 40px; margin-bottom: 16px;">
+        <button style="
+          background-color: ${plan.highlighted ? '#FF6600' : 'white'};
+          color: ${plan.highlighted ? 'white' : '#FF6600'};
+          border: 1px solid #FF6600;
+          border-radius: 8px;
+          padding: 18px 48px;
+          font-size: 2.25rem
+          font-weight: 800;
+          cursor: pointer;
+        ">Buy Now</button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; flex: auto; gap: 8px; margin-left: 5px;">
+      ${plan.features.map(f => `
+        <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; font-weight: 400; line-height: 160%; color: rgb(71, 84, 103);">
+          <img src="images/tick-mark.png" alt="" style="object-fit: contain; margin-top: 3px;">
+          ${f}
+        </li>
+      `).join("")}
+    </ul>
+    <div style="padding: 0 10px 0 14px;  font-family: 'Poppins', sans-serif; display: flex; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 6px; margin-right: 4px;">
+            <img style="width: 14px;" src="images/star1.png" alt="">
+            <img style="width: 14px;" src="images/star1.png" alt="">
+            <img style="width: 14px;" src="images/star1.png" alt="">
+            <img style="width: 14px;" src="images/star1.png" alt="">
+            <img style="width: 14px;" src="images/star1.png" alt="">
+        </div>
+        <h6 style="font-weight: 600; font-size: 0.875rem; margin-right: 8px;">5</h6>
+        <p style="font-weight: 400; font-size: 0.875rem;">(500+Reviews)</p>
+    </div>
+  </div>
+  </div>
+  `;
+
+  pricingContainer.appendChild(card);
 });
