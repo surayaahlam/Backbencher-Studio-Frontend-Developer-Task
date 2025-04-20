@@ -724,3 +724,43 @@ body {
         margin-bottom: 56px;
     }
 }
+
+/* Backed by Science Section styles */
+.science-container {
+    padding: 80px 112px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    justify-content: space-between;
+    color: white;
+
+    h2 {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 160%;
+        margin-bottom: 24px;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 8.45px;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 160%;
+    }
+}
