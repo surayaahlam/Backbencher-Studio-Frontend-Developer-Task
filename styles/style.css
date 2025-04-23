@@ -606,6 +606,10 @@ body {
         margin-bottom: 16px;
         margin-top: 52px;
     }
+
+    >div {
+        width: 100%;
+    }
 }
 
 .kits {
